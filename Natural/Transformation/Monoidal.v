@@ -9,9 +9,9 @@ Set Primitive Projections.
 Set Universe Polymorphism.
 Unset Transparent Obligations.
 
-Class LaxMonoidal_Transform {C : Category} `{@Monoidal C}
-      {F : C ⟶ C} `{@LaxMonoidalFunctor _ _ _ _ F}
-      {G : C ⟶ C} `{@LaxMonoidalFunctor _ _ _ _ G} (N : F ⟹ G) := {
+Class LaxMonoidal_Transform {C : Category} `{@Monoidal C} {D : Category} `{@Monoidal D}
+      {F : C ⟶ D} `{@LaxMonoidalFunctor _ _ _ _ F}
+      {G : C ⟶ D} `{@LaxMonoidalFunctor _ _ _ _ G} (N : F ⟹ G) := {
   lax_pure_transform : lax_pure[G] ≈ transform[N] _ ∘ lax_pure[F];
 
   lax_ap_transform {x y} :
