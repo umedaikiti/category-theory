@@ -8,8 +8,8 @@ Set Primitive Projections.
 Set Universe Polymorphism.
 Unset Transparent Obligations.
 
-Program Definition EilenbergMoore `(T : C ⟶ C) `{@Monad C T} : Category := {|
-  obj     := ∃ a : C, TAlgebra T a;
+Program Definition EilenbergMoore `(T : C ⟶ C) {M : @Monad C T} : Category := {|
+  obj     := ∃ a : C, @TAlgebra C T M a;
   hom     := fun x y => TAlgebraHom T ``x ``y (projT2 x) (projT2 y);
   homset  := fun _ _ => {| equiv := fun f g => t_alg_hom[f] ≈ t_alg_hom[g] |};
   id      := fun _ => {| t_alg_hom := id |};
