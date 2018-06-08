@@ -15,13 +15,6 @@ Section MonoidalFunctors.
 
 Context {C : Category}.
 Context `{@Monoidal C}.
-Context {D : Category}.
-Context `{@Monoidal D}.
-Context {G : C ⟶ D}.
-
-Context {E : Category}.
-Context `{@Monoidal E}.
-Context {F : D ⟶ E}.
 
 Local Obligation Tactic := program_simpl.
 
@@ -33,14 +26,14 @@ Global Program Instance Id_MonoidalFunctor :
 }.
 Next Obligation.
   simpl; intros.
-  destruct H0; simpl.
+  destruct H; simpl.
   exact id.
 Defined.
 Next Obligation. simpl; intros; simplify; cat. Qed.
 Next Obligation. simpl; intros; simplify; cat. Qed.
 Next Obligation.
   simpl; intros.
-  destruct H1; simpl.
+  destruct H; simpl.
   exact id.
 Defined.
 Next Obligation. simpl; intros; simplify; cat. Qed.
@@ -59,7 +52,7 @@ Global Program Instance Id_LaxMonoidalFunctor :
 }.
 Next Obligation.
   simpl; intros.
-  destruct H0; simpl.
+  destruct H; simpl.
   exact id.
 Defined.
 Next Obligation. simpl; intros; simplify; cat. Qed.
