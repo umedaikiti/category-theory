@@ -18,5 +18,5 @@ Class Applicative_Transform {C : Category}
   is_strong_transformation :>
     @Strong_Transform C InternalProduct_Monoidal _ _ _ _ N;
   is_lax_monoidal_transformation :>
-    @LaxMonoidal_Transform C InternalProduct_Monoidal _ _ _ _ N
+    @LaxMonoidal_Transform C InternalProduct_Monoidal C InternalProduct_Monoidal _ _ _ _ N
 }.

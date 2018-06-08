@@ -31,7 +31,6 @@ Local Obligation Tactic := idtac.
 Program Instance Id_Applicative : @Applicative C _ _ _ (Id[C]) := {
   is_strong := Id_StrongFunctor;
   is_lax_monoidal := @Id_LaxMonoidalFunctor C InternalProduct_Monoidal
-                                            C InternalProduct_Monoidal
 }.
 
 Program Instance Compose_Applicative
